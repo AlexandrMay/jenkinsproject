@@ -32,7 +32,6 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <skipTests>false</skipTests>
-
                 </configuration>
                 <dependencies>
                     <dependency>
