@@ -32,15 +32,7 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <skipTests>false</skipTests>
-                    <argLine>
-                        -javaagent:/Users/woxapp/Downloads/aspectjweaver-1.8.13.jar
-                    </argLine>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>ru.yandex.qatools.allure.testng.AllureTestListener</value>
-                        </property>
-                    </properties>
+
                 </configuration>
                 <dependencies>
                     <dependency>
