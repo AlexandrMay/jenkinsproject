@@ -33,7 +33,7 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <skipTests>false</skipTests>
                     <argLine>
-                        -javaagent:C:\STORAGE\aspectjweaver-1.8.13.jar
+                        -javaagent:/Users/woxapp/Downloads/aspectjweaver-1.8.13.jar
                     </argLine>
                     <properties>
                         <property>
@@ -100,6 +100,11 @@
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-testng</artifactId>
             <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.kirlionik</groupId>
+            <artifactId>allure-cucumber-plugin</artifactId>
+            <version>1.0.1</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,13 +1,18 @@
 package stepDefination;
 
 import Pages.SignInPage;
+import Pages.SignUpPage;
 import Pages.WelcomePage;
 import Properties.Caps;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import java.net.MalformedURLException;
 
@@ -17,11 +22,15 @@ public class StepDefinations extends Caps {
     private static AndroidDriver driver;
     private WelcomePage welcomePage;
 
+    @Before
+    public void SetUP() throws MalformedURLException {
+        driver=capabilities();
+        welcomePage = new WelcomePage(driver);
+    }
+
 
     @Given("^User is on Welcome Screen$")
     public void user_is_on_welcome_screen() throws MalformedURLException {
-        driver= Caps.capabilities();
-        welcomePage = new WelcomePage(driver);
         String heading = welcomePage.headingText;
         Assert.assertEquals("Welcome to" + System.lineSeparator() +"SpacePass", heading);
         String startButton = welcomePage.startButtonText;
@@ -44,6 +53,22 @@ public class StepDefinations extends Caps {
         driver.navigate().back();
     }
 
+    @When("^User tap to Start Button$")
+    public void user_tap_to_start_button() throws Throwable {
+        SignUpPage signUpPage = welcomePage.clickStartButton();
+    }
 
+    @Then("^User is on Sign Up screen$")
+    public void user_is_on_sign_up_screen() throws Throwable {
+        SignUpPage signUpPage = new SignUpPage(driver);
+        String heading = signUpPage.headingText;
+        Assert.assertEquals("Sign Up", heading);
+        driver.navigate().back();
+    }
+
+    @After
+    public void tearDown() {
+        driver.quit();
+    }
 
 }

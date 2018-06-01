@@ -16,7 +16,11 @@ import org.testng.annotations.Test;
                 "html:target/cucumber-reports/cucumber-pretty",
                 "json:target/cucumber-reports/CucumberTestReport.json",
                 "rerun:target/cucumber-reports/rerun.txt"
-        })
+        },
+        plugin = {
+                "com.github.kirlionik.cucumberallure.AllureReporter"
+        }
+)
 public class TestRunner {
     private TestNGCucumberRunner testNGCucumberRunner;
 
