@@ -19,16 +19,16 @@ public class SignUpPage extends Page {
     @AndroidFindBy(id = "co.spacein.mobile.spacepass:id/skip_button")
     private MobileElement skipButton;
 
-    @AndroidFindBy(xpath = "//TextInputLayout[@text = 'E-mail']")
+    @AndroidFindBy(id = "co.spacein.mobile.spacepass:id/text_input_layout_mail")
     private MobileElement emailField;
 
     @AndroidFindBy(id = "co.spacein.mobile.spacepass:id/et_mail")
     private MobileElement emailInput;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText")
+    @AndroidFindBy(xpath = "(//android.widget.EditText)[1]")
     private MobileElement passwordInput;
 
-    @AndroidFindBy(xpath = "//TextInputLayout[@text = 'Password']")
+    @AndroidFindBy(id = "co.spacein.mobile.spacepass:id/text_input_layout_password")
     private MobileElement passwordField;
 
     @AndroidFindBy(accessibility = "Toggle password visibility")
@@ -48,7 +48,6 @@ public class SignUpPage extends Page {
 
     @AndroidFindBy(id = "co.spacein.mobile.spacepass:id/google_bt_sign_in")
     private MobileElement googleButton;
-
 
     public String headingText = getText(heading);
 

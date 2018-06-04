@@ -20,17 +20,18 @@ import java.net.MalformedURLException;
 public class StepDefinations extends Caps {
 
     private static AndroidDriver driver;
-    private WelcomePage welcomePage;
 
-    @Before
+
+    @Given("^Driver is on$")
     public void SetUP() throws MalformedURLException {
         driver=capabilities();
-        welcomePage = new WelcomePage(driver);
     }
+
 
 
     @Given("^User is on Welcome Screen$")
     public void user_is_on_welcome_screen() throws MalformedURLException {
+        WelcomePage welcomePage = new WelcomePage(driver);
         String heading = welcomePage.headingText;
         Assert.assertEquals("Welcome to" + System.lineSeparator() +"SpacePass", heading);
         String startButton = welcomePage.startButtonText;
@@ -42,6 +43,7 @@ public class StepDefinations extends Caps {
 
     @When("^User tap to Sign In Button$")
     public void user_tap_to_sign_in_button() {
+        WelcomePage welcomePage = new WelcomePage(driver);
         SignInPage signInPage = welcomePage.clickSignInButton();
     }
 
@@ -55,6 +57,7 @@ public class StepDefinations extends Caps {
 
     @When("^User tap to Start Button$")
     public void user_tap_to_start_button() throws Throwable {
+        WelcomePage welcomePage = new WelcomePage(driver);
         SignUpPage signUpPage = welcomePage.clickStartButton();
     }
 
@@ -66,7 +69,7 @@ public class StepDefinations extends Caps {
         driver.navigate().back();
     }
 
-    @After
+   @Then("^Driver is off$")
     public void tearDown() {
         driver.quit();
     }
