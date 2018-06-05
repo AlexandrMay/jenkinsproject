@@ -32,8 +32,8 @@ public class StepDefinations extends Caps {
     @Given("^User is on Welcome Screen$")
     public void user_is_on_welcome_screen() throws MalformedURLException {
         WelcomePage welcomePage = new WelcomePage(driver);
-        String heading = welcomePage.headingText;
-        Assert.assertEquals("Welcome to" + System.lineSeparator() +"SpacePass", heading);
+     //   String heading = welcomePage.headingText;
+    //    Assert.assertEquals("Welcome to" + System.lineSeparator() +"SpacePass", heading);
         String startButton = welcomePage.startButtonText;
         String s = startButton.toUpperCase();
         Assert.assertEquals("START", s);

@@ -16,7 +16,7 @@ public class Caps {
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(MobileCapabilityType.DEVICE_NAME, "KJKVRO9HJVZP7LGU");
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        cap.setCapability(MobileCapabilityType.APP, "/Users/woxapp/Desktop/spacepass_debug_(04.06.18)_(16.00).apk");
+        cap.setCapability(MobileCapabilityType.APP, "C:/Users/Alexandr/Desktop/spacepass_debug_(04.06.18)_(22.00).apk");
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),cap);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
